@@ -56,7 +56,7 @@
           <li><a href="#account">No account, no sign-in</a></li>
           <li><a href="#tracking">No analytics, tracking or ads</a></li>
           <li><a href="#network">Internet, notifications and iCloud</a></li>
-          <li><a href="#scripture">A future version: Scripture from API.Bible</a></li>
+          <li><a href="#scripture">Scripture from API.Bible</a></li>
           <li><a href="#apple">Apple and TestFlight</a></li>
           <li><a href="#email">If you email us</a></li>
           <li><a href="#children">Children</a></li>
@@ -82,7 +82,7 @@
         When you tap <strong>Done</strong> on a sermon note, werkLife writes the note as a plain-text (Markdown) file in the app’s temporary folder on your iPhone and opens the iOS share sheet. From there, you choose where it goes: Files, AirDrop, Mail or another app. A sermon note can also be shared as text from its page.
       </p>
       <p>
-        Nothing leaves your iPhone unless you pick a destination. Once you send a copy somewhere, that copy is handled by wherever you sent it (for example, iCloud Drive or your email provider).
+        Your note never leaves your iPhone unless you pick a destination. Once you send a copy somewhere, that copy is handled by wherever you sent it (for example, iCloud Drive or your email provider).
       </p>
 
       <h2 id="account">3. No account, no sign-in</h2>
@@ -97,23 +97,23 @@
 
       <h2 id="network">5. Internet, notifications and iCloud</h2>
       <p>
-        This version of werkLife doesn’t connect to the internet. It doesn’t schedule notifications, and it doesn’t use iCloud. If a later version adds reminders or anything else that changes this, it will be described here before that version ships.
+        werkLife uses the internet for one thing only: fetching Scripture text from API.Bible (section 6). It doesn’t schedule notifications, and it doesn’t use iCloud. If a later version adds reminders or anything else that changes this, it will be described here before that version ships.
       </p>
 
-      <h2 id="scripture">6. A future version: Scripture from API.Bible</h2>
+      <h2 id="scripture">6. Scripture from API.Bible</h2>
       <p>
-        <strong>This section describes a future version. The current version doesn’t do any of this.</strong>
-      </p>
-      <p>
-        An upcoming version of werkLife will be able to show Scripture in more translations (for example, the NIV). It will fetch that text from <a href="https://api.bible" rel="noopener">API.Bible</a>, a service run by the American Bible Society, when your iPhone is online.
+        werkLife shows Scripture in the NIV by fetching it from <a href="https://api.bible" rel="noopener">API.Bible</a>, a service run by the American Bible Society, when your iPhone is online. It’s the only thing werkLife uses the internet for.
       </p>
       <ul>
-        <li>Each request asks for a passage (such as John 3:16) in a translation. Like any request over the internet, it also reaches API.Bible from your device’s IP address.</li>
-        <li>Requests don’t include your notes, your name, your Apple ID or anything else you’ve written.</li>
-        <li>The Berean Standard Bible (BSB), a public-domain translation, will come built into the app. Reading it works offline and makes no requests at all.</li>
+        <li>Each request asks for one chapter of the Bible (such as Psalm 23) in the NIV. It carries werkLife’s API key, which is the same for everyone who uses the app and identifies the app, not you. It names the app only as “werkLife”, not your iPhone’s model or iOS version. Like any request over the internet, it reaches API.Bible from your device’s IP address.</li>
+        <li>Requests never include your notes, your name, your Apple ID, an identifier for your device or anything else you’ve written. They’re made without cookies or stored sign-ins, and werkLife sends API.Bible no reports about what you read.</li>
+        <li>werkLife asks for a chapter when you open it, and for the chapter of today’s reading when you open Today. For each reading plan you’re in, it also fetches the coming days’ chapters in the background, at most once a day: the next day you haven’t read and the 10 days after it, or 7 if you’re in more than five plans. That way you can keep reading without a connection.</li>
+        <li>Because of this, API.Bible can see which chapters are being read or are coming up, and when, from your IP address. It can’t see who you are or anything you write.</li>
+        <li>Chapters are kept on your iPhone for up to 30 days, so they open instantly and work without a connection. After that they’re fetched again or removed, as API.Bible’s terms require.</li>
+        <li>When you’re offline, werkLife shows the Berean Standard Bible (BSB), a public-domain translation built into the app. Reading it makes no requests at all.</li>
       </ul>
       <p>
-        API.Bible’s handling of these requests is covered by its own terms and privacy policy. This section will be updated with the details before that version ships.
+        API.Bible’s handling of these requests is covered by its own terms and privacy policy.
       </p>
 
       <h2 id="apple">7. Apple and TestFlight</h2>
@@ -143,7 +143,7 @@
 
       <h2 id="changes">11. Changes to this policy</h2>
       <p>
-        If what the app does with your data changes (for example, when Scripture lookups or saving between launches arrive), we’ll update this policy and the “Last updated” date above before that version ships, and note material changes in the release notes. Past versions of this policy are in the public history of <a href="https://github.com/cwerkey/werklife-site" rel="noopener">this site’s repository</a>.
+        If what the app does with your data changes (for example, when saving between launches arrives), we’ll update this policy and the “Last updated” date above before that version ships, and note material changes in the release notes. Past versions of this policy are in the public history of <a href="https://github.com/cwerkey/werklife-site" rel="noopener">this site’s repository</a>.
       </p>
 
       <h2 id="contact">12. Contact</h2>
